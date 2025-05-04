@@ -10,8 +10,8 @@ img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 # Filtro de convolución (promedio simple)
 kernel = np.ones((3, 3), np.float32) / 9
-filtro_convolucion = cv2.filter2D(img, -1, kernel)
-filtro_convolucion_rgb = cv2.cvtColor(filtro_convolucion, cv2.COLOR_BGR2RGB)
+f1 = cv2.filter2D(img, -1, kernel)
+f1 = cv2.cvtColor(f1, cv2.COLOR_BGR2RGB)
 
 # Mostrar ambas imágenes lado a lado
 plt.figure(figsize=(10, 4))

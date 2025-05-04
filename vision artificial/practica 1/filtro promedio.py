@@ -1,13 +1,22 @@
 import cv2
 import matplotlib.pyplot as plt
-import numpy as np
 
 img= cv2.imread('C:\descarga chatgpt.png')
-cv2.imshow('original',img)
+img_rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 
-f2=cv2.blur(img,-1,{3,3})
+f1=cv2.blur(img,(15,15))
+f1=cv2.cvtColor(f1,cv2.COLOR_BGR2RGB)
 
-cv2.imshow('filtro de media',f1)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+plt.figure(figsize=(10,4))
+plt.subplot(1,2,1)
+plt.title('Original')
+plt.imshow(img_rgb)
+plt.axis('Off')
 
+plt.subplot(1,2,2)
+plt.title('filtro promedio')
+plt.imshow(f1)
+plt.axis('Off')
+
+plt.tight_layout()
+plt.show()

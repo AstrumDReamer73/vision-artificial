@@ -1,12 +1,10 @@
 import cv2
 import matplotlib.pyplot as plt
-import numpy as np
 
 img= cv2.imread('C:\descarga chatgpt.png')
-img_rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+img_rgb=cv2.cvtColor(img,cv2.COLOR_BGR2RGB) 
 
-f1=cv2.medianBlur(img,11)
-f1=cv2.cvtColor(f1,cv2.COLOR_RGB2BGR)
+img_gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 plt.figure(figsize=(10,4))
 plt.subplot(1,2,1)
@@ -15,8 +13,8 @@ plt.imshow(img_rgb)
 plt.axis('Off')
 
 plt.subplot(1,2,2)
-plt.title('filtro de mediana')
-plt.imshow(f1)
+plt.title('escala de grises')
+plt.imshow(img_gray,cmap='gray')
 plt.axis('Off')
 
 plt.tight_layout()
